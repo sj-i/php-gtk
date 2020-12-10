@@ -156,7 +156,7 @@ abstract class GtkAbstract
 
     protected function findDll($name)
     {
-        $r = glob($this->libdir . "/{$name}*." . PHP_SHLIB_SUFFIX, GLOB_NOSORT | GLOB_NOESCAPE | GLOB_ERR);
+        $r = glob($this->libdir . "/{$name}*." . PHP_SHLIB_SUFFIX . '*', GLOB_NOSORT | GLOB_NOESCAPE | GLOB_ERR);
         if($r) {
             return $r[0];
         }
@@ -190,6 +190,7 @@ abstract class GtkAbstract
             $ffiObj->id($libId);
             return $ffiObj;
         } catch(ParserException $e) {
+            var_dump($e);
             $this->debugException($e, $code);
         } catch(\FFI\Exception $e) {
             $this->debugException($e, $libpath);

@@ -350,9 +350,39 @@ class Gtk extends Gdk
         return $this->G_TYPE_CHECK_INSTANCE_CAST($obj, $this->GTK_TYPE_CONTAINER(), 'GtkContainer');
     }
 
+    public function GTK_WIDGET($obj)
+    {
+        return $this->G_TYPE_CHECK_INSTANCE_CAST($obj, $this->GTK_TYPE_WIDGET(), 'GtkWidget');
+    }
+
+    public function GTK_IMAGE($obj)
+    {
+        return $this->G_TYPE_CHECK_INSTANCE_CAST($obj, $this->GTK_TYPE_IMAGE(), 'GtkImage');
+    }
+
+    public function GTK_WINDOW($obj)
+    {
+        return $this->G_TYPE_CHECK_INSTANCE_CAST($obj, $this->GTK_TYPE_WINDOW(), 'GtkWindow');
+    }
+
     public function GTK_TYPE_CONTAINER()
     {
         return self::$ffi->gtk_container_get_type();
+    }
+
+    public function GTK_TYPE_WIDGET()
+    {
+        return self::$ffi->gtk_widget_get_type();
+    }
+
+    public function GTK_TYPE_IMAGE()
+    {
+        return self::$ffi->gtk_image_get_type();
+    }
+
+    public function GTK_TYPE_WINDOW()
+    {
+        return self::$ffi->gtk_window_get_type();
     }
 
     public function GTK_BUILDER_WARN_INVALID_CHILD_TYPE($object, $type)

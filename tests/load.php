@@ -4,7 +4,7 @@ use Gtk\PHPGtk;
 
 include __DIR__ . '/../vendor/autoload.php';
 const PHP_GTK_DEV_DEBUG = true;
-$lib = null;
+$lib = '/usr/lib/x86_64-linux-gnu';
 if(PHP_OS_FAMILY === 'Windows') {
     $lib = dirname(__DIR__) . '/libgtk';
 }
