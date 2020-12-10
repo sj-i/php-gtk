@@ -46,7 +46,7 @@ function main(int $argc, $argv): int
 {
     global $gtk, $app;
 
-    $app = $gtk->gtk_application_new("org.gtk.example", $gtk->G_APPLICATION_FLAGS_NONE);
+    $app = $gtk->gtk_application_new("org.gtk.example", \Gtk\GtkEnum::G_APPLICATION_FLAGS_NONE);
     $gtk->g_signal_connect($app, "activate", $gtk->G_CALLBACK('activate'), NULL);
 
     $status = $gtk->g_application_run($gtk->G_APPLICATION($app), $argc, $argv);

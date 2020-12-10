@@ -5,7 +5,7 @@ include __DIR__ . '/load.php';
 $gtk->gtk_init($argc, $argv);
 
 // Create the main window
-$mainwin = $gtk->gtk_window_new($gtk->GTK_WINDOW_TOPLEVEL);
+$mainwin = $gtk->gtk_window_new(\Gtk\GtkEnum::GTK_WINDOW_TOPLEVEL);
 
 GtkWidget::init($gtk);
 
